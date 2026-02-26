@@ -25,6 +25,7 @@ return {
       cmp.setup({
         sources = {
           {name = 'nvim_lsp'},
+          {name = 'rust_analyzer'},
         },
         mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
