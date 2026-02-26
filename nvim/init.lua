@@ -12,16 +12,17 @@ autocmd("LspAttach", {
   group = RomainGroup,
   callback = function(e)
     local opts = { buffer = e.buf }
-    -- vim.diagnostic.enable = true
-    -- vim.diagnostic.config({
-    --   virtual_lines = true,
-    -- })
+
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-    -- I really like these.
+    -- BEGIN I really like these.
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set('n', 'gD', function() vim.lsp.buf.declaration() end, opts)
     vim.keymap.set("n", "g.", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "g?", function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set('n', '<F2>', function() vim.lsp.buf.rename() end, opts)
+    vim.keymap.set({'n', 'x'}, '<F3>', function() vim.lsp.buf.format({async = true}) end, opts)
+    -- END
 
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)

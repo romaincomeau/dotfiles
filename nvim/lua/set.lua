@@ -26,3 +26,5 @@ vim.opt.signcolumn = "auto"
 
 vim.opt.updatetime = 3000
 vim.opt.termguicolors = true
+
+vim.o.pumheight = 7
