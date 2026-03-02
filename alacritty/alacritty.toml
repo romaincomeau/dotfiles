@@ -6,6 +6,9 @@ decorations = "full"
 dynamic_title = true
 opacity = 1.0
 
+[window.padding]
+x = 8
+y = 0
 
 [font]
 size = 20.0
